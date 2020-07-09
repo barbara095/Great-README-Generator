@@ -13,30 +13,72 @@ function promptUser() {
       },
       {
         type: "input",
-        name: "location",
-        message: "Where are you from?"
+        name: "description",
+        message: "Please enter a description of your project"
       },
       {
         type: "input",
-        name: "hobby",
-        message: "What is your favorite hobby?"
+        name: "installation",
+        message: "How do you want to install your application?"
       },
       {
         type: "input",
-        name: "food",
-        message: "What is your favorite food?"
+        name: "usage",
+        message: "How do you want to use your application?"
       },
       {
         type: "input",
-        name: "github",
-        message: "Enter your GitHub Username"
+        name: "license",
+        message: "What type of license do you wish to use in your application?"
       },
       {
         type: "input",
-        name: "linkedin",
-        message: "Enter your LinkedIn URL."
+        name: "contributing",
+        message: "What are the rules/guidelines in contributing to this project?"
+      },
+      {
+        type: "input",
+        name: "test",
+        message: "run a test"
       }
     ]);
    
   }
-  promptUser();
+
+  function generateREADME(responses) {
+    return `
+    
+    # ${responses.title}
+    
+    ## Description 
+    * ${responses.description}
+
+    ## Installation 
+    * ${responses.installation}
+
+    ## Usage
+    * ${responses.usage}
+
+    ## License 
+    * ${responses.license}
+
+    ## Contributing
+    * ${responses.contributing}
+
+    ## Test
+    * ${responses.test}
+    `;
+  }
+
+promptUser()
+    .then(function(responses) {
+        md = generateREADME(responses);
+
+        return writeFileAsync("README.md", md);
+    })
+    .then(function() {
+        console.log("Successfully created README.md");
+    })
+    .catch(function(err) {
+        console.log(err);
+    })
