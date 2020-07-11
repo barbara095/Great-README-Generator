@@ -32,8 +32,8 @@ function promptUser() {
         name: "license",
         message: "What type of license do you wish to use in your application?",
         choices: [
-            "MIT License",
-            "apache-2.0",
+            "MIT",
+            "Apache-2.0",
             "GNU General Public License v2.0",
             "GNU General Public License v3.0",
             "ISC",
