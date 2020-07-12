@@ -19,7 +19,6 @@ function promptUser() {
       {
         type: "input",
         name: "installation", 
-        // Add options
         message: "How do you want to install your application?"
       },
       {
@@ -69,6 +68,8 @@ function promptUser() {
     return `
 # ${responses.title}
 
+  ![${responses.license}](https://img.shields.io/badge/License-${responses.license}-blue.svg)
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -89,7 +90,8 @@ function promptUser() {
 * ${responses.usage}
 
 ## License 
-* [![License](https://img.shields.io/badge/License-${responses.license}-blue.svg)(https://opensource.org/licenses/${responses.license})]
+This application is licensed under ${responses.license}. 
+For more information about this license, click here: (https://opensource.org/licenses/${responses.license})
 
 ## Contributing
 * ${responses.contributing}
@@ -107,86 +109,12 @@ function promptUser() {
 promptUser()
     .then(function(responses) {
         const md = generateREADME(responses);
-        return writeFileAsync("README.md", md); 
+        return writeFileAsync("./Generated/README.md", md); 
     })
     .then(function() {
-        console.log("Successfully created README.md");
+        console.log("Successfully created a README.md for this project");
     })
     .catch(function(err) {
         console.log(err);
     })
 
-// // Append title
-// fs.appendFileAsync("README.md", `("## " + ${responses.title})` + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append description
-// fs.appendFileAsync("README.md", `("## " + ${responses.description})` + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append installation
-// fs.appendFileAsync("README.md", `("## " + ${responses.installation})` + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append usage
-// fs.appendFileAsync("README.md", ("## " + `${responses.usage}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append usage
-// fs.appendFileAsync("README.md", ("## " + `${responses.usage}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append license
-// fs.appendFileAsync("README.md", ("## " + `${responses.license}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append contributing
-// fs.appendFileAsync("README.md", ("## " + `${responses.contributing}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append test
-// fs.appendFileAsync("README.md", ("## " + `${responses.test}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append Question 1
-// fs.appendFileAsync("README.md", ("## " + `${responses.question1}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-// // Append Question 2
-// fs.appendFileAsync("README.md", ("## " + `${responses.question2}`) + '\n', function(err) {
-//     if (err) {
-//         return console.log(err);
-//     } 
-//         console.log ("Success!");
-// });
-
-
-
-    
