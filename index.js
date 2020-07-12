@@ -33,12 +33,12 @@ function promptUser() {
         choices: [
             "MIT",
             "Apache-2.0",
-            "GNU General Public License v2.0",
-            "GNU General Public License v3.0",
+            "GNU-General-Public-License-v2.0",
+            "GNU-General-Public-License-v3.0",
             "ISC",
-            "Eclipse Public License 1.0",
-            "Microsoft Public License",
-            "Open Software License 3.0"
+            "Eclipse-Public-License 1.0",
+            "Microsoft-Public-License",
+            "Open-Software-License-3.0"
         ],
       },
       {
@@ -64,11 +64,12 @@ function promptUser() {
    
   }
 
+  // Function to generate the READ ME file
   function generateREADME(responses) {
     return `
 # ${responses.title}
 
-  ![${responses.license}](https://img.shields.io/badge/License-${responses.license}-blue.svg)
+[![${responses.license}](https://img.shields.io/badge/License-${responses.license}-blue.svg)]
 
 ## Table of Contents
 - [Description](#description)
@@ -90,11 +91,12 @@ function promptUser() {
 * ${responses.usage}
 
 ## License 
-This application is licensed under ${responses.license}. 
-For more information about this license, click here: (https://opensource.org/licenses/${responses.license})
+* This application is licensed under ${responses.license}. 
+* For more information about this license, click here: (https://opensource.org/licenses/${responses.license})
 
 ## Contributing
 * ${responses.contributing}
+* For a general set of contribution guidelines, click here: [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
 ## Test
 * ${responses.test}
@@ -106,6 +108,7 @@ For more information about this license, click here: (https://opensource.org/lic
 `;
   }
 
+// Call promptUser function, then add user's responses to newly written md file. Alert of success
 promptUser()
     .then(function(responses) {
         const md = generateREADME(responses);
