@@ -9,7 +9,7 @@ It includes a Table of Contents, so that when a user clicks on the links, it tak
 The underlying aim is to simplify the user's process for creating a README file by quickly generating the file featuring sections based on the user's responses to a set of prompts. 
 
 ## Video of user flow
-
+https://drive.google.com/file/d/1BQjPcuoJsPfD1er9SSBebo8AzbEnA-ju/view
 
 ## Images of application
 ![Image 1](Assets/images/image1.png)
