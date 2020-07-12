@@ -8,8 +8,25 @@ It includes a Table of Contents, so that when a user clicks on the links, it tak
 ## Motivation
 The underlying aim is to simplify the user's process for creating a README file by quickly generating the file featuring sections based on the user's responses to a set of prompts. 
 
-## Images of application
+## Video of user flow
 
+
+## Images of application
+![Image 1](Assets/images/image1.png)
+
+![Image 2](Assets/images/image2.png)
+
+![Image 3](Assets/images/image3.png)
+
+![Image 4](Assets/images/image4.png)
+
+![Image 5](Assets/images/image5.png)
+
+![Image 6](Assets/images/image6.png)
+
+![Image 7](Assets/images/image7.png)
+
+![Image 8](Assets/images/image8.png)
 
 
 

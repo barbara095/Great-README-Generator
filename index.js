@@ -32,13 +32,13 @@ function promptUser() {
         message: "What type of license do you wish to use in your application?",
         choices: [
             "MIT",
-            "Apache-2.0",
+            "Apache2.0",
             "GNU-General-Public-License-v2.0",
             "GNU-General-Public-License-v3.0",
             "ISC",
-            "Eclipse-Public-License 1.0",
+            "Eclipse1.0",
             "Microsoft-Public-License",
-            "Open-Software-License-3.0"
+            "Open-Software-License-3.0",
         ],
       },
       {
@@ -49,7 +49,7 @@ function promptUser() {
       {
         type: "input",
         name: "test",
-        message: "please enter test instructions"
+        message: "Please enter test instructions"
       },
       {
         type: "input",
@@ -69,7 +69,7 @@ function promptUser() {
     return `
 # ${responses.title}
 
-[![${responses.license}](https://img.shields.io/badge/License-${responses.license}-blue.svg)]
+![${responses.license}](https://img.shields.io/badge/License-${responses.license}-blue.svg)
 
 ## Table of Contents
 - [Description](#description)
@@ -96,7 +96,6 @@ function promptUser() {
 
 ## Contributing
 * ${responses.contributing}
-* For a general set of contribution guidelines, click here: [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
 ## Test
 * ${responses.test}
